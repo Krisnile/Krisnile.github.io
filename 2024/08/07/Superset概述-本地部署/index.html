@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="中/en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+    <meta name="description" content="Too young Too simple Sometimes naive.">
+  
+
+  
+
+  
+    <meta name="author" content="Krisnile">
+  
+
+  
+
+  
+
+  <title>Superset概述&amp;本地部署 | Krisnile&#39;s Blog</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon-kisie.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
+  
+  
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://vip.helloimg.com/i/2024/08/09/66b59557b0c23.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Krisnile&#39;s Blog
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Superset概述&amp;本地部署</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Krisnile</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-08-07T13:40:38.000Z" itemprop="datePublished">2024-08-07</time>
+          </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2024-08-09T06:09:49.798Z" itemprop="dateUpdated">2024-08-09</time>
+            </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="Superset"><a href="#Superset" class="headerlink" title="Superset"></a>Superset</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://superset.apache.org/">Welcome | Superset (apache.org)</a><br><a target="_blank" rel="noopener" href="https://github.com/apache/superset">https://github.com/apache/superset</a></p>
+</blockquote>
+<h1 id="—-简介-—"><a href="#—-简介-—" class="headerlink" title="— 简介 —"></a><strong>— 简介 —</strong></h1><ol>
+<li>Superset 是一个数据可视化和数据探索平台（数据可视化工具）</li>
+<li>Superset 可以取代或增强许多团队的专有商业智能工具</li>
+<li>Superset 与各种数据源很好地集成。</li>
+</ol>
+<img src="https://vip.helloimg.com/i/2024/08/07/66b37e8229037.png" alt="数据源支持--github主页截图" width="50%">
+
+<p>Superset 提供：</p>
+<ul>
+<li><p>A <strong>no-code interface</strong> for building charts quickly</p>
+<p>  用于快速构建图表的<strong>无代码界面</strong></p>
+</li>
+<li><p>A powerful, web-based <strong>SQL Editor</strong> for advanced querying</p>
+<p>  一个强大的、基于 Web 的 <strong>SQL 编辑器</strong>，用于高级查询</p>
+</li>
+<li><p>A <strong>lightweight semantic layer</strong> for quickly defining custom dimensions and metrics</p>
+<p>  <strong>一个轻量级语义层</strong>，用于快速定义自定义维度和指标</p>
+</li>
+<li><p>Out of the box support for <strong>nearly any SQL</strong> database or data engine</p>
+<p>  开箱即用，支持<strong>几乎所有 SQL</strong> 数据库或数据引擎</p>
+</li>
+<li><p>A wide array of <strong>beautiful visualizations</strong> to showcase your data, ranging from simple bar charts to geospatial visualizations</p>
+<p>  各种<strong>精美的可视化效果</strong>来展示您的数据，范围从简单的条形图到地理空间可视化效果</p>
+</li>
+<li><p>Lightweight, configurable <strong>caching layer</strong> to help ease database load</p>
+<p>  轻量级、可配置<strong>的缓存层</strong>，有助于减轻数据库负载</p>
+</li>
+<li><p>Highly extensible <strong>security roles and authentication</strong> options</p>
+<p>  高度可扩展<strong>的安全角色和身份验证</strong>选项</p>
+</li>
+<li><p>An <strong>API</strong> for programmatic customization</p>
+<p>  用于编程定制的 <strong>API</strong></p>
+</li>
+<li><p>A <strong>cloud-native architecture</strong> designed from the ground up for scale</p>
+<p>  从头开始设计的<strong>云原生架构</strong>，旨在实现规模化</p>
+</li>
+</ul>
+<h1 id="—-安装-—"><a href="#—-安装-—" class="headerlink" title="— 安装 —"></a>— <strong>安装 —</strong></h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://superset.apache.org/docs/installation/architecture">建筑 |超集 — Architecture | Superset (apache.org)</a></p>
+</blockquote>
+<p>官网提供多种安装方式：</p>
+<p><strong>Kubernetes、PyPI、Docker Compose、Docker</strong></p>
+<p>在 <a target="_blank" rel="noopener" href="https://superset.apache.org/docs/quickstart/">Quickstart</a> 中官方建议使用 Docker Compose 方式，但这种构建方式不被建议在生产环境中使用</p>
+<img src="https://vip.helloimg.com/i/2024/08/07/66b37e7b99dfb.png" alt="注意1--文档截图" width="70%">
+
+<img src="https://vip.helloimg.com/i/2024/08/07/66b37e742af95.png" alt="注意2--文档截图" width="70%">
+
+<p>可参考：</p>
+<p><a target="_blank" rel="noopener" href="https://zhaoweilong.github.io/superset-doc-zh/docs/installation/installing-superset-using-docker-compose">使用Docker Compose安装本地安装 | Superset (zhaoweilong.github.io)</a></p>
+<p>要注意 superset 不直接支持 Windows 操作系统，需要使用虚拟机或 WSL + Docker Desktop</p>
+<p><a target="_blank" rel="noopener" href="https://hub.docker.com/r/apache/superset">apache&#x2F;superset - Docker Image | Docker Hub</a></p>
+<h2 id="apache-superset-2-1详细部署流程"><a href="#apache-superset-2-1详细部署流程" class="headerlink" title="apache-superset:2.1详细部署流程"></a>apache-superset:2.1详细部署流程</h2><p>&lt; superset 本地vmware虚拟机 ubuntu 环境 PyPI 部署实现 &gt;</p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
+<li>项目需求，用于生产的数据分析平台，使用<strong>PyPI</strong>部署</li>
+<li>测试与简单调用可移步docker部署</li>
+</ul>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
+<li>VMware® Workstation 16 Pro</li>
+<li>ubuntu-20.04.6-desktop-amd64</li>
+</ul>
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><h4 id="一、OS环境配置"><a href="#一、OS环境配置" class="headerlink" title="一、OS环境配置"></a>一、OS环境配置</h4><ol>
+<li><p>下载 iso 文件<br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/">Index of &#x2F;ubuntu-releases&#x2F; | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9f79824.png" alt="OS环境配置-1" width="70%">
+</li>
+<li><p>打开VMware，点击&#x2F;文件&#x2F;新建虚拟机</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de93280b2.png" alt="OS环境配置-2" width="50%">
+</li>
+<li><p>选择典型，下一步</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9a97335.png" alt="OS环境配置-3" width="50%">
+</li>
+<li><p>选择安装程序光盘映像文件，找到刚才下载的iso文件，下一步</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9bdb6af.png" alt="OS环境配置-4" width="50%">
+</li>
+<li><p>填写信息（名称与登录密码），下一步</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9340d37.png" alt="OS环境配置-5" width="50%">
+</li>
+<li><p>填写信息，找个合适的目录位置，下一步</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de96981ce.png" alt="OS环境配置-6" width="50%">
+</li>
+<li><p>20G（仅作项目环境调试不长期使用），单个文件（确保性能但影响不大），下一步</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4de954b97f.png" alt="OS环境配置-7" width="50%">
+</li>
+<li><p>点击完成</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded3b033a.png" alt="OS环境配置-8" width="50%">
+</li>
+<li><p>当前页面，点击开启此虚拟机</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded49c2af.png" alt="OS环境配置-9" width="70%">
+</li>
+<li><p>等一会，出现下面页面，继续等待</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded66da2a.png" alt="OS环境配置-10" width="70%">
+</li>
+<li><p>鼠标移动到虚拟机窗口可操作，按 CTRL+ALT 快捷键回到主机，自动安装结束出现下面页面<br>   点击，输入先前设置的密码，回车，登入系统</p>
+<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded4c65c7.png" alt="OS环境配置-11" width="70%"></li>
+</ol>
+<h4 id="二、Superset环境配置"><a href="#二、Superset环境配置" class="headerlink" title="二、Superset环境配置"></a>二、Superset环境配置</h4><ol>
+<li><p>进入系统，出现弹窗，全都关掉Skip&#x2F;Next&#x2F;Done</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c021fa74.png" alt="Superset环境配置-1" width="70%">
+</li>
+<li><p>打开左上角火狐浏览器，搜索Superset</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57bffe9b12.png" alt="Superset环境配置-2" width="70%">
+</li>
+<li><p>一般是搜索结果第一个，进入官网，点击 Get Started</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c017c03f.png" alt="Superset环境配置-3" width="70%">
+</li>
+<li><p>点击左侧栏 &#x2F;Installation&#x2F;PyPI</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c00026cb.png" alt="Superset环境配置-4" width="70%">
+</li>
+<li><p>右侧找到 ubuntu20.04 对应的依赖项下载命令复制</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c0047b2d.png" alt="Superset环境配置-5" width="70%">
+</li>
+<li><p>粘贴到终端（打开左侧Home文件夹，右键空白处，点击Open in Terminal打开终端）</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57bfeb4850.png" alt="Superset环境配置-6" width="70%">
+</li>
+<li><p>在终端窗口使用快捷键 CTRL+SHIFT+V，复制先前拷贝的命令，粘贴后回车运行（中间需输入密码和Y确定），运行结果如下图</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c091fb7b.png" alt="Superset环境配置-7" width="70%">
+</li>
+<li><p>手册往下翻，安装python的虚拟环境venv</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c05ce4b0.png" alt="Superset环境配置-8" width="70%">
+</li>
+<li><p>出现了一个WARNING，告诉我们需要添加环境变量$PATH（可以使用 echo $PATH命令查看当前环境变量）</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57bfa49b70.png" alt="Superset环境配置-9" width="70%">
+</li>
+<li><p>使用 sudo vi &#x2F;etc&#x2F;profile 进入配置文件进行编辑</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57bf9cef26.png" alt="Superset环境配置-10" width="70%">
+</li>
+<li><p>到最后一行，先点击 i 键进入编辑模式，写入export PATH&#x3D;$PATH:&#x2F;home&#x2F;krisnile(替换为自己的用户名)&#x2F;.local&#x2F;bin&#x2F;（如果麻烦就在目录里找到文件使用其他编辑器或自行安装vim等，注意保存）</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2d914b4.png" alt="Superset环境配置-11" width="70%">
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c383dcf0.png" alt="Superset环境配置-12" width="70%">
+</li>
+<li><p>输入source &#x2F;etc&#x2F;profile载入修改后的配置文件</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2e2b700.png" alt="Superset环境配置-13" width="70%">
+</li>
+<li><p>输入virtualenv —version查看到命令已经存在</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2d6bc6f.png" alt="Superset环境配置-14" width="70%">
+</li>
+<li><p>使用 virtualenv superset创建名为superset的python虚拟环境，并使用source命令激活环境</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2fa371a.png" alt="Superset环境配置-15" width="70%">
+或者可以使用其他方式构建虚拟环境（推荐conda），也可参考文档
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2dc939a.png" alt="Superset环境配置-16" width="70%"></li>
+</ol>
+<p>关于其他操作系统配置（网络，快捷键，美化等）这里不再赘述，如有需要自行配置即可</p>
+<h4 id="三、Superset下载安装与初始化"><a href="#三、Superset下载安装与初始化" class="headerlink" title="三、Superset下载安装与初始化"></a>三、Superset下载安装与初始化</h4><ol>
+<li><p>在刚刚创建的虚拟环境内，输入pip install apache-superset命令正式下载superset，等待结束</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aaa096e17.png" alt="Superset下载安装与初始化-1" width="70%">
+</li>
+<li><p>结束后，输入superset db upgrade命令进行初始化</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aa9b2d1a8.png" alt="Superset下载安装与初始化-2" width="70%">
+发现报错
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad5885c3.png" alt="Superset下载安装与初始化-3" width="70%">
+</li>
+<li><p>检查发现superset2.x版本不再受支持<br><a target="_blank" rel="noopener" href="https://github.com/apache/superset/discussions/27211">Superset 2.x： ‘AttributeError： 模块’flask.json’没有属性’JSONEncoder’’ ·apache&#x2F;超集 ·讨论 #27211 — Superset 2.x: <code>AttributeError: module &#39;flask.json&#39; has no attribute &#39;JSONEncoder&#39;</code> · apache&#x2F;superset · Discussion #27211 (github.com)</a></p>
+</li>
+</ol>
+<p>如果更换版本成本太大，尝试了pip python和superset的升级也有一些问题</p>
+<ol start="4">
+<li>还是先根据提示先pip install —upgrade pip</li>
+</ol>
+<p>再次运行superset db upgrade命令可能会出现 TypeError: <strong>init</strong>() got an unexpected keyword argument ‘unbound_message’是apache-superset 2.1的bug，需要降级flask，使用下面的命令：</p>
+<p>python -m pip uninstall -y Flask</p>
+<p>python -m pip install Flask&#x3D;&#x3D;2.0.3</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aae215978.png" alt="Superset下载安装与初始化-4" width="70%">
+
+<ol start="5">
+<li><p>发现在终端输入superset是有输出的，所以还是配置问题</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad56f425.png" alt="Superset下载安装与初始化-5" width="70%">
+</li>
+<li><p>要设置一个FLASK_APP的环境变量，终端输入export FLASK_APP&#x3D;superset</p>
+<p> 再次运行superset db upgrade</p>
+</li>
+</ol>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad553219.png" alt="Superset下载安装与初始化-6" width="70%">
+
+<ol start="7">
+<li>看文档要进行初始化配置<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad546a3b.png" alt="Superset下载安装与初始化-7" width="70%">
+翻译：注意，对于Superset的生产实例，有些配置是强制性的。特别地，如果没有用户指定的SECRET_KEY值，Superset将不会启动。请参考[配置Superset](https://superset.apache.org/docs/configuration/configuring-superset)</li>
+</ol>
+<p>上面爆不安全的SECRET_KEY也是之前找问题输入了一句export SUPERSET_SECRET_KEY&#x3D;“123456”</p>
+<p>而找到~&#x2F;superset&#x2F;lib&#x2F;pytohn3.8&#x2F;site-packages&#x2F;superset目录下的config.py配置文件可以发现，配置里就是SECRET_KEY调环境变量的SUPERSET_SECRET_KEY<br><img src="https://vip.helloimg.com/i/2024/08/09/66b5aad7ccc85.png" alt="Superset下载安装与初始化-8" width="70%"><br>文档里面的注释建议用openssl rand -base64 42那就在终端中用该命令生成一个随机密钥再赋值给SUPERSET_SECRET_KEY<br><img src="https://vip.helloimg.com/i/2024/08/09/66b5aad55314b.png" alt="Superset下载安装与初始化-9" width="70%"></p>
+<ol start="8">
+<li><p>执行superset db upgrade命令,遇到模块缺失问题就pip install安装，或者重装</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aadce5498.png" alt="Superset下载安装与初始化-10" width="70%">
+</li>
+<li><p>最后superset db upgrade命令执行成功</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aadac6b79.png" alt="Superset下载安装与初始化-11" width="70%">
+</li>
+<li><p>接着根据官网文档依次执行下面的命令</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad5cf8b1.png" alt="Superset下载安装与初始化-12" width="70%">
+export FLASK_APP=superset命令上面执行过了</li>
+</ol>
+<p>输入superset fab create-admin创建管理员用户，不输入默认就是[ ]中的内容，密码输入不可见</p>
+<p>输错了CTRL+C中断重新执行该命令<br><img src="https://vip.helloimg.com/i/2024/08/09/66b5ab057cf22.png" alt="Superset下载安装与初始化-13" width="70%"><br>superset load_examples下载一些样例数据，应该是要开代理连接的</p>
+<p>superset init创建默认角色和权限</p>
+<p>superset run -p 8088 –with-threads –reload –debugger 在端口 8088 上启动 Web 服务器，使用 -p 绑定端口</p>
+<ol start="11">
+<li>打开浏览器，网址栏输入localhost:8088回车就有了，输入之前创建的管理员用户[admin]和密码</li>
+</ol>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5ab079b908.png" alt="Superset下载安装与初始化-14" width="70%">
+成功进入（因为没改代理跳过了superset load_examples一步所以主菜单没显示样例数据）
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5ab07b89c9.png" alt="Superset下载安装与初始化-15" width="70%">
+
+<ol start="12">
+<li><p>到此，<strong>apache-superset:2.1</strong>部署完成</p>
+<p>其他配置与问题可查阅参考资料</p>
+</li>
+</ol>
+<h1 id="—-使用-—"><a href="#—-使用-—" class="headerlink" title="— 使用 —"></a>— 使用 —</h1><p>用docker的话：<br>默认运行地址 <a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088</a><br>默认账号密码：admin</p>
+<p>还是以官方文档为主，比较详细：</p>
+<p><a target="_blank" rel="noopener" href="https://superset.apache.org/docs/using-superset/creating-your-first-dashboard">创建您的第一个仪表板 |超集 — Creating Your First Dashboard | Superset (apache.org)</a></p>
+<p>因为要做项目集成，还找了一些其他的相关项目与教程，链接如下：</p>
+<p>使用 Superset 和 Cube 构建指标仪表板：</p>
+<p><a target="_blank" rel="noopener" href="https://devpress.csdn.net/opensource/62f3986ec6770329307f89bc.html">https://devpress.csdn.net/opensource/62f3986ec6770329307f89bc.html</a></p>
+<p>应用集成 Superset：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqi/p/intergate-superset.html">教程 —— 如何在自己的应用集成superset - JadePeng - 博客园</a></p>
+<p>一个易于使用的自助式开放式 BI 报告和 BI 仪表板平台：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/TuiQiao/CBoard">https://github.com/TuiQiao/CBoard</a></p>
+<h1 id="—-参考材料-—"><a href="#—-参考材料-—" class="headerlink" title="— 参考材料 —"></a>— 参考材料 —</h1><ul>
+<li>包括上面出现过的所有链接</li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7348289379054387239">57K star！开源BI神器，比收费软件还好用的数据可视化工具 - 掘金</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b02fcea7eb5b">轻量级BI工具Superset的搭建与使用 - 简书</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40228992/article/details/136414159">superset不同版本安装使用采坑总结（持续更新中）_superset3.1.1改动-CSDN博客</a></li>
+</ul>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://vip.helloimg.com/i/2024/08/09/66b596198c376.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/08/06/cs-learning/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">cs-learning</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+    <div class="disqus-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <p id="disqus_error" class="disqus-error" style="display: none;">如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w</p>
+      <div id="disqus_thread" class="disqus-thread"></div>
+    </div>
+    <script type="text/javascript">
+      (function() {
+        var d = document, s = d.createElement('script'), c = d.querySelector(".disqus-container");
+        if (!c) return;
+        s.src = 'https://Krisnile.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        s.onerror = () => {
+          document.querySelector("#disqus_error").style.display = "block";
+        }
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://vip.helloimg.com/i/2024/08/07/66b3814ebdd1c.png" class="soft-size--round soft-style--box" alt="Krisnile">
+    
+    
+      <h2>Krisnile</h2>
+    
+    
+      <p>Too young Too simple Sometimes naive.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>3</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>为提升网站图片资源的加载速度，方便有效地管理和使用，已将所有用于站点的图片上传至图床服务中，如有侵权，网站底部链接联系，感谢支持</p>
+  </div>
+</section>
+
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/Krisnile" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">Krisnile</a></p>
+<!--
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+-->
+    <p>
+      <a href="javascript:;" id="theme-light">☀︎ 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌕︎ 深色</a>
+      <a href="javascript:;" id="theme-auto">☪︎ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://fastly.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
