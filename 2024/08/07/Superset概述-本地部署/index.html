@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="中/en">
+<html lang="zh/en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,7 +110,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-08-09T06:09:49.798Z" itemprop="dateUpdated">2024-08-09</time>
+              <time  class="article-updated" datetime="2024-08-20T02:31:14.304Z" itemprop="dateUpdated">2024-08-20</time>
             </h2>
           
           
@@ -149,7 +149,7 @@
 <li>Superset 可以取代或增强许多团队的专有商业智能工具</li>
 <li>Superset 与各种数据源很好地集成。</li>
 </ol>
-<img src="https://vip.helloimg.com/i/2024/08/07/66b37e8229037.png" alt="数据源支持--github主页截图" width="50%">
+<img src="https://vip.helloimg.com/i/2024/08/07/66b37e8229037.png" alt="数据源支持--github主页截图.png" width="50%">
 
 <p>Superset 提供：</p>
 <ul>
@@ -181,188 +181,199 @@
 <p>  从头开始设计的<strong>云原生架构</strong>，旨在实现规模化</p>
 </li>
 </ul>
-<h1 id="—-安装-—"><a href="#—-安装-—" class="headerlink" title="— 安装 —"></a>— <strong>安装 —</strong></h1><blockquote>
+<h1 id="—-部署-—"><a href="#—-部署-—" class="headerlink" title="— 部署 —"></a>— <strong>部署 —</strong></h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://superset.apache.org/docs/installation/architecture">建筑 |超集 — Architecture | Superset (apache.org)</a></p>
 </blockquote>
-<p>官网提供多种安装方式：</p>
-<p><strong>Kubernetes、PyPI、Docker Compose、Docker</strong></p>
-<p>在 <a target="_blank" rel="noopener" href="https://superset.apache.org/docs/quickstart/">Quickstart</a> 中官方建议使用 Docker Compose 方式，但这种构建方式不被建议在生产环境中使用</p>
-<img src="https://vip.helloimg.com/i/2024/08/07/66b37e7b99dfb.png" alt="注意1--文档截图" width="70%">
-
-<img src="https://vip.helloimg.com/i/2024/08/07/66b37e742af95.png" alt="注意2--文档截图" width="70%">
-
-<p>可参考：</p>
-<p><a target="_blank" rel="noopener" href="https://zhaoweilong.github.io/superset-doc-zh/docs/installation/installing-superset-using-docker-compose">使用Docker Compose安装本地安装 | Superset (zhaoweilong.github.io)</a></p>
-<p>要注意 superset 不直接支持 Windows 操作系统，需要使用虚拟机或 WSL + Docker Desktop</p>
+<blockquote>
+<p>官网提供多种安装方式：<strong>Kubernetes、PyPI、Docker Compose、Docker等</strong></p>
+</blockquote>
+<h2 id="1-Docker-部署"><a href="#1-Docker-部署" class="headerlink" title="1. Docker 部署"></a>1. <strong>Docker 部署</strong></h2><p><a target="_blank" rel="noopener" href="https://superset.apache.org/docs/installation/docker-builds">https://superset.apache.org/docs/installation/docker-builds</a></p>
 <p><a target="_blank" rel="noopener" href="https://hub.docker.com/r/apache/superset">apache&#x2F;superset - Docker Image | Docker Hub</a></p>
-<h2 id="apache-superset-2-1详细部署流程"><a href="#apache-superset-2-1详细部署流程" class="headerlink" title="apache-superset:2.1详细部署流程"></a>apache-superset:2.1详细部署流程</h2><p>&lt; superset 本地vmware虚拟机 ubuntu 环境 PyPI 部署实现 &gt;</p>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
+<p>默认运行地址 <a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088</a></p>
+<p>默认账号密码：admin</p>
+<h2 id="2-Docker-Compose-部署"><a href="#2-Docker-Compose-部署" class="headerlink" title="2. Docker Compose 部署"></a>2. Docker Compose 部署</h2><p><strong>注意：</strong></p>
+<p>在 <a target="_blank" rel="noopener" href="https://superset.apache.org/docs/quickstart/">Quickstart</a> 中官方建议使用 Docker Compose 方式，但这种构建方式不被建议在生产环境中使用</p>
+<img src="https://vip.helloimg.com/i/2024/08/07/66b37e7b99dfb.png" alt="注意1--文档截图.png" width="70%">
+
+<img src="https://vip.helloimg.com/i/2024/08/07/66b37e742af95.png" alt="注意2--文档截图.png" width="70%">
+
+<p><strong>OS环境依赖：</strong></p>
+<p>可参考：<a target="_blank" rel="noopener" href="https://zhaoweilong.github.io/superset-doc-zh/docs/installation/installing-superset-using-docker-compose">使用Docker Compose安装本地安装 | Superset (zhaoweilong.github.io)</a></p>
+<p>要注意 superset 不直接支持 Windows 操作系统，需要使用虚拟机或 WSL + Docker Desktop</p>
+<p>win11+docker compose部署尝试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从官网克隆仓库到本地，进入目录</span></span><br><span class="line">git <span class="built_in">clone</span> --depth=1  https://github.com/apache/superset.git</span><br><span class="line"><span class="built_in">cd</span> superset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 有几种选项，详见官方文档，这里使用交互式开发环境的方式</span></span><br><span class="line"><span class="comment"># 接着就会部署，如果win缺少环境会装wsl和docker desktop</span></span><br><span class="line">docker compose up</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/20/66c3f37868b2e.png" alt="docker-compose.png" width="70%">
+
+
+<ul>
+<li><strong>Docker Desktop官方安装</strong><a target="_blank" rel="noopener" href="https://docs.docker.com/desktop/install/windows-install/">https://docs.docker.com/desktop/install/windows-install/</a></li>
+<li>docker desktop修改默认安装路径（管理存储空间），可见<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2127691">基于windows WSL安装Docker Desktop，修改默认安装到C盘及默认下载镜像到C盘-腾讯云开发者社区-腾讯云 (tencent.com)</a></li>
+</ul>
+<h2 id="3-PyPI-部署"><a href="#3-PyPI-部署" class="headerlink" title="3. PyPI 部署"></a>3. PyPI 部署</h2><h3 id="apache-superset-2-1详细部署流程"><a href="#apache-superset-2-1详细部署流程" class="headerlink" title="apache-superset:2.1详细部署流程"></a>apache-superset:2.1详细部署流程</h3><h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><ul>
 <li>项目需求，用于生产的数据分析平台，使用<strong>PyPI</strong>部署</li>
 <li>测试与简单调用可移步docker部署</li>
 </ul>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><ul>
 <li>VMware® Workstation 16 Pro</li>
 <li>ubuntu-20.04.6-desktop-amd64</li>
 </ul>
-<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><h4 id="一、OS环境配置"><a href="#一、OS环境配置" class="headerlink" title="一、OS环境配置"></a>一、OS环境配置</h4><ol>
-<li><p>下载 iso 文件<br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/">Index of &#x2F;ubuntu-releases&#x2F; | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9f79824.png" alt="OS环境配置-1" width="70%">
+<h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><h5 id="OS环境配置"><a href="#OS环境配置" class="headerlink" title="OS环境配置"></a>OS环境配置</h5><ol>
+<li><p>下载 iso 文件（<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/">Index of &#x2F;ubuntu-releases&#x2F; | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a>）</p>
+<p> 我这里下的是**&#x2F;ubuntu-releases&#x2F;20.04.6&#x2F;**<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/20.04.6/ubuntu-20.04.6-desktop-amd64.iso">ubuntu-20.04.6-desktop-amd64.iso</a></p>
 </li>
 <li><p>打开VMware，点击&#x2F;文件&#x2F;新建虚拟机</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de93280b2.png" alt="OS环境配置-2" width="50%">
 </li>
-<li><p>选择典型，下一步</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9a97335.png" alt="OS环境配置-3" width="50%">
+<li><p>类型选择典型（推荐），下一步</p>
 </li>
 <li><p>选择安装程序光盘映像文件，找到刚才下载的iso文件，下一步</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9bdb6af.png" alt="OS环境配置-4" width="50%">
 </li>
-<li><p>填写信息（名称与登录密码），下一步</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de9340d37.png" alt="OS环境配置-5" width="50%">
+<li><p>填写信息（用户名与登录密码等），下一步</p>
 </li>
-<li><p>填写信息，找个合适的目录位置，下一步</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de96981ce.png" alt="OS环境配置-6" width="50%">
+<li><p>填写信息（虚拟机名称和安装位置），下一步</p>
 </li>
-<li><p>20G（仅作项目环境调试不长期使用），单个文件（确保性能但影响不大），下一步</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4de954b97f.png" alt="OS环境配置-7" width="50%">
+<li><p>磁盘分 20G（仅作项目环境调试不长期使用），存储为单个文件（确保性能但影响不大），下一步</p>
 </li>
-<li><p>点击完成</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded3b033a.png" alt="OS环境配置-8" width="50%">
+<li><p>完成</p>
 </li>
-<li><p>当前页面，点击开启此虚拟机</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded49c2af.png" alt="OS环境配置-9" width="70%">
+<li><p>选择刚创建的虚拟机，开启</p>
 </li>
-<li><p>等一会，出现下面页面，继续等待</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded66da2a.png" alt="OS环境配置-10" width="70%">
-</li>
-<li><p>鼠标移动到虚拟机窗口可操作，按 CTRL+ALT 快捷键回到主机，自动安装结束出现下面页面<br>   点击，输入先前设置的密码，回车，登入系统</p>
-<img src="https://vip.helloimg.com/i/2024/08/08/66b4ded4c65c7.png" alt="OS环境配置-11" width="70%"></li>
-</ol>
-<h4 id="二、Superset环境配置"><a href="#二、Superset环境配置" class="headerlink" title="二、Superset环境配置"></a>二、Superset环境配置</h4><ol>
-<li><p>进入系统，出现弹窗，全都关掉Skip&#x2F;Next&#x2F;Done</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c021fa74.png" alt="Superset环境配置-1" width="70%">
-</li>
-<li><p>打开左上角火狐浏览器，搜索Superset</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57bffe9b12.png" alt="Superset环境配置-2" width="70%">
-</li>
-<li><p>一般是搜索结果第一个，进入官网，点击 Get Started</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c017c03f.png" alt="Superset环境配置-3" width="70%">
-</li>
-<li><p>点击左侧栏 &#x2F;Installation&#x2F;PyPI</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c00026cb.png" alt="Superset环境配置-4" width="70%">
-</li>
-<li><p>右侧找到 ubuntu20.04 对应的依赖项下载命令复制</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c0047b2d.png" alt="Superset环境配置-5" width="70%">
-</li>
-<li><p>粘贴到终端（打开左侧Home文件夹，右键空白处，点击Open in Terminal打开终端）</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57bfeb4850.png" alt="Superset环境配置-6" width="70%">
-</li>
-<li><p>在终端窗口使用快捷键 CTRL+SHIFT+V，复制先前拷贝的命令，粘贴后回车运行（中间需输入密码和Y确定），运行结果如下图</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c091fb7b.png" alt="Superset环境配置-7" width="70%">
-</li>
-<li><p>手册往下翻，安装python的虚拟环境venv</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c05ce4b0.png" alt="Superset环境配置-8" width="70%">
-</li>
-<li><p>出现了一个WARNING，告诉我们需要添加环境变量$PATH（可以使用 echo $PATH命令查看当前环境变量）</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57bfa49b70.png" alt="Superset环境配置-9" width="70%">
-</li>
-<li><p>使用 sudo vi &#x2F;etc&#x2F;profile 进入配置文件进行编辑</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57bf9cef26.png" alt="Superset环境配置-10" width="70%">
-</li>
-<li><p>到最后一行，先点击 i 键进入编辑模式，写入export PATH&#x3D;$PATH:&#x2F;home&#x2F;krisnile(替换为自己的用户名)&#x2F;.local&#x2F;bin&#x2F;（如果麻烦就在目录里找到文件使用其他编辑器或自行安装vim等，注意保存）</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2d914b4.png" alt="Superset环境配置-11" width="70%">
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c383dcf0.png" alt="Superset环境配置-12" width="70%">
-</li>
-<li><p>输入source &#x2F;etc&#x2F;profile载入修改后的配置文件</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2e2b700.png" alt="Superset环境配置-13" width="70%">
-</li>
-<li><p>输入virtualenv —version查看到命令已经存在</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2d6bc6f.png" alt="Superset环境配置-14" width="70%">
-</li>
-<li><p>使用 virtualenv superset创建名为superset的python虚拟环境，并使用source命令激活环境</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2fa371a.png" alt="Superset环境配置-15" width="70%">
-或者可以使用其他方式构建虚拟环境（推荐conda），也可参考文档
-<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2dc939a.png" alt="Superset环境配置-16" width="70%"></li>
-</ol>
-<p>关于其他操作系统配置（网络，快捷键，美化等）这里不再赘述，如有需要自行配置即可</p>
-<h4 id="三、Superset下载安装与初始化"><a href="#三、Superset下载安装与初始化" class="headerlink" title="三、Superset下载安装与初始化"></a>三、Superset下载安装与初始化</h4><ol>
-<li><p>在刚刚创建的虚拟环境内，输入pip install apache-superset命令正式下载superset，等待结束</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aaa096e17.png" alt="Superset下载安装与初始化-1" width="70%">
-</li>
-<li><p>结束后，输入superset db upgrade命令进行初始化</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aa9b2d1a8.png" alt="Superset下载安装与初始化-2" width="70%">
-发现报错
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad5885c3.png" alt="Superset下载安装与初始化-3" width="70%">
-</li>
-<li><p>检查发现superset2.x版本不再受支持<br><a target="_blank" rel="noopener" href="https://github.com/apache/superset/discussions/27211">Superset 2.x： ‘AttributeError： 模块’flask.json’没有属性’JSONEncoder’’ ·apache&#x2F;超集 ·讨论 #27211 — Superset 2.x: <code>AttributeError: module &#39;flask.json&#39; has no attribute &#39;JSONEncoder&#39;</code> · apache&#x2F;superset · Discussion #27211 (github.com)</a></p>
+<li><p>等待，鼠标移动至窗口可操作，按 CTRL+ALT 快捷键回到主机，输入用户名密码，登入系统</p>
 </li>
 </ol>
-<p>如果更换版本成本太大，尝试了pip python和superset的升级也有一些问题</p>
+<h5 id="Superset环境配置"><a href="#Superset环境配置" class="headerlink" title="Superset环境配置"></a>Superset环境配置</h5><ol>
+<li><p>进入系统，全都关掉Skip&#x2F;Next&#x2F;Done等弹窗，左上角火狐浏览器，搜索Superset，没连接代理可以用bing，一般是搜索结果第一个，进入官网（<a target="_blank" rel="noopener" href="https://superset.apache.org/">欢迎 |超集 — Welcome | Superset (apache.org)</a>）， Get Started</p>
+</li>
+<li><p>点击左侧栏 &#x2F;Installation&#x2F;PyPI，右侧找到 ubuntu20.04 对应的操作系统依赖项下载命令复制</p>
+<p> 在 Ubuntu 20.04 中，以下命令将确保安装所需的依赖项：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install build-essential libssl-dev libffi-dev python3-dev python3-pip libsasl2-dev libldap2-dev default-libmysqlclient-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>粘贴到终端，在终端窗口使用快捷键 CTRL+SHIFT+V，粘贴命令回车运行，结果如下图</p>
+</li>
+</ol>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c091fb7b.png" alt="Superset环境配置-1.png" width="70%">
+
 <ol start="4">
-<li>还是先根据提示先pip install —upgrade pip</li>
+<li><p>安装python的虚拟环境venv</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
+<p> 结束出现了一个WARNING，告诉我们需要添加环境变量$PATH（可以使用 echo $PATH命令查看当前环境变量）</p>
+</li>
 </ol>
-<p>再次运行superset db upgrade命令可能会出现 TypeError: <strong>init</strong>() got an unexpected keyword argument ‘unbound_message’是apache-superset 2.1的bug，需要降级flask，使用下面的命令：</p>
-<p>python -m pip uninstall -y Flask</p>
-<p>python -m pip install Flask&#x3D;&#x3D;2.0.3</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aae215978.png" alt="Superset下载安装与初始化-4" width="70%">
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57bfa49b70.png" alt="Superset环境配置-2.png" width="70%">
+
+<p>可以使用 sudo vi &#x2F;etc&#x2F;profile 进入配置文件进行编辑，在文件末尾写入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/home/&lt;用户名&gt;/.local/bin/</span><br></pre></td></tr></table></figure>
+
+<p>（如果vi麻烦就自行下载使用其他编辑器vim nano vsc……，注意保存编辑内容）</p>
+<p>  输入source &#x2F;etc&#x2F;profile载入修改后的配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2e2b700.png" alt="Superset环境配置-3.png" width="70%">
 
 <ol start="5">
-<li><p>发现在终端输入superset是有输出的，所以还是配置问题</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad56f425.png" alt="Superset下载安装与初始化-5" width="70%">
-</li>
-<li><p>要设置一个FLASK_APP的环境变量，终端输入export FLASK_APP&#x3D;superset</p>
-<p> 再次运行superset db upgrade</p>
-</li>
+<li>输入virtualenv —version查看到命令已经存在</li>
 </ol>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad553219.png" alt="Superset下载安装与初始化-6" width="70%">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv --version</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2d6bc6f.png" alt="Superset环境配置-4.png" width="70%">
+
+<ol start="6">
+<li>使用 virtualenv superset创建名为superset的python虚拟环境，并使用source命令激活环境</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">virtualenv superset</span><br><span class="line"><span class="built_in">source</span> superset/bin/activate</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b57c2fa371a.png" alt="Superset环境配置-5.png" width="70%">
+
+<p>不喜欢virtualenv也可以使用其他方式构建虚拟环境，也可参考文档</p>
+<h5 id="Superset下载安装与初始化"><a href="#Superset下载安装与初始化" class="headerlink" title="Superset下载安装与初始化"></a><strong>Superset下载安装与初始化</strong></h5><ol>
+<li>在刚刚创建的虚拟环境内，输入pip install apache-superset命令正式下载superset，等待结束</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install apache-superset</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aaa096e17.png" alt="Superset下载安装与初始化-1.png" width="70%">
+
+<ol start="2">
+<li>结束后，输入superset db upgrade命令进行初始化</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">superset db upgrade</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aa9b2d1a8.png" alt="Superset下载安装与初始化-2.png" width="70%">
+
+<p>发现报错</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad5885c3.png" alt="Superset下载安装与初始化-3.png" width="70%">
+
+<ol start="3">
+<li>检查发现superset2.x版本不再受支持</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/apache/superset/discussions/27211">Superset 2.x： ‘AttributeError： 模块’flask.json’没有属性’JSONEncoder’’ ·apache&#x2F;超集 ·讨论 #27211 — Superset 2.x: <code>AttributeError: module &#39;flask.json&#39; has no attribute &#39;JSONEncoder&#39;</code> · apache&#x2F;superset · Discussion #27211 (github.com)</a></p>
+<p>如果更换版本成本太大，尝试了pip python和superset的升级也有一些问题</p>
+<ol start="4">
+<li>还是先根据提示先升级pip</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install —upgrade pip</span><br></pre></td></tr></table></figure>
+
+<p>再次运行superset db upgrade命令可能会出现 TypeError: <strong>init</strong>() got an unexpected keyword argument ‘unbound_message’是apache-superset 2.1的bug，需要降级flask，使用下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m pip uninstall -y Flask</span><br><span class="line"></span><br><span class="line">python -m pip install Flask==2.0.3</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aae215978.png" alt="Superset下载安装与初始化-4.png" width="70%">
+
+<ol start="5">
+<li>发现在终端输入superset是有输出的，但是需要设置一个FLASK_APP的环境变量</li>
+</ol>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad56f425.png" alt="Superset下载安装与初始化-5.png" width="70%">
+
+<p>终端输入export FLASK_APP&#x3D;superset</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭终端就没有了后面添加到/etc/profile</span></span><br><span class="line"><span class="built_in">export</span> FLASK_APP=superset</span><br></pre></td></tr></table></figure>
+
+<p>再次运行superset db upgrade</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">superset db upgrade</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad553219.png" alt="Superset下载安装与初始化-6.png" width="70%">
+
+<ol start="6">
+<li>看文档还要进行初始化配置</li>
+</ol>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad546a3b.png" alt="Superset下载安装与初始化-7.png" width="70%">
+
+<p>翻译：注意，对于Superset的生产实例，有些配置是强制性的。特别地，如果没有用户指定的SECRET_KEY值，Superset将不会启动。请参考<a target="_blank" rel="noopener" href="https://superset.apache.org/docs/configuration/configuring-superset">配置Superset</a></p>
+<p>上面爆不安全的SECRET_KEY也是之前找问题输入了一句export SUPERSET_SECRET_KEY&#x3D;“123456”</p>
+<p>而找到~&#x2F;superset&#x2F;lib&#x2F;pytohn3.8&#x2F;site-packages&#x2F;superset目录下的config.py配置文件可以发现，配置里就是SECRET_KEY调环境变量的SUPERSET_SECRET_KEY</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad7ccc85.png" alt="Superset下载安装与初始化-8.png" width="70%">
+
+<p>文档里面的注释建议用openssl rand -base64 42那就在终端中用该命令生成一个随机密钥再赋值给SUPERSET_SECRET_KEY</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭终端就没有了后面添加到/etc/profile</span></span><br><span class="line">SUPERSET_SECRET_KEY=<span class="string">&quot;<span class="subst">$(openssl rand -base64 42)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad55314b.png" alt="Superset下载安装与初始化-9.png" width="70%">
 
 <ol start="7">
-<li>看文档要进行初始化配置<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad546a3b.png" alt="Superset下载安装与初始化-7" width="70%">
-翻译：注意，对于Superset的生产实例，有些配置是强制性的。特别地，如果没有用户指定的SECRET_KEY值，Superset将不会启动。请参考[配置Superset](https://superset.apache.org/docs/configuration/configuring-superset)</li>
+<li>执行superset db upgrade命令,遇到模块缺失问题就pip install安装，或者重装</li>
 </ol>
-<p>上面爆不安全的SECRET_KEY也是之前找问题输入了一句export SUPERSET_SECRET_KEY&#x3D;“123456”</p>
-<p>而找到~&#x2F;superset&#x2F;lib&#x2F;pytohn3.8&#x2F;site-packages&#x2F;superset目录下的config.py配置文件可以发现，配置里就是SECRET_KEY调环境变量的SUPERSET_SECRET_KEY<br><img src="https://vip.helloimg.com/i/2024/08/09/66b5aad7ccc85.png" alt="Superset下载安装与初始化-8" width="70%"><br>文档里面的注释建议用openssl rand -base64 42那就在终端中用该命令生成一个随机密钥再赋值给SUPERSET_SECRET_KEY<br><img src="https://vip.helloimg.com/i/2024/08/09/66b5aad55314b.png" alt="Superset下载安装与初始化-9" width="70%"></p>
-<ol start="8">
-<li><p>执行superset db upgrade命令,遇到模块缺失问题就pip install安装，或者重装</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aadce5498.png" alt="Superset下载安装与初始化-10" width="70%">
-</li>
-<li><p>最后superset db upgrade命令执行成功</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aadac6b79.png" alt="Superset下载安装与初始化-11" width="70%">
-</li>
-<li><p>接着根据官网文档依次执行下面的命令</p>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5aad5cf8b1.png" alt="Superset下载安装与初始化-12" width="70%">
-export FLASK_APP=superset命令上面执行过了</li>
-</ol>
-<p>输入superset fab create-admin创建管理员用户，不输入默认就是[ ]中的内容，密码输入不可见</p>
-<p>输错了CTRL+C中断重新执行该命令<br><img src="https://vip.helloimg.com/i/2024/08/09/66b5ab057cf22.png" alt="Superset下载安装与初始化-13" width="70%"><br>superset load_examples下载一些样例数据，应该是要开代理连接的</p>
-<p>superset init创建默认角色和权限</p>
-<p>superset run -p 8088 –with-threads –reload –debugger 在端口 8088 上启动 Web 服务器，使用 -p 绑定端口</p>
-<ol start="11">
-<li>打开浏览器，网址栏输入localhost:8088回车就有了，输入之前创建的管理员用户[admin]和密码</li>
-</ol>
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5ab079b908.png" alt="Superset下载安装与初始化-14" width="70%">
-成功进入（因为没改代理跳过了superset load_examples一步所以主菜单没显示样例数据）
-<img src="https://vip.helloimg.com/i/2024/08/09/66b5ab07b89c9.png" alt="Superset下载安装与初始化-15" width="70%">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里装了一个marshmallow_enum</span></span><br><span class="line">pip install marshmallow_enum</span><br></pre></td></tr></table></figure>
 
-<ol start="12">
-<li><p>到此，<strong>apache-superset:2.1</strong>部署完成</p>
-<p>其他配置与问题可查阅参考资料</p>
-</li>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5aadce5498.png" alt="Superset下载安装与初始化-10.png" width="70%">
+
+<ol start="8">
+<li>最后在执行superset db upgrade命令，成功</li>
+<li>接着根据官网文档依次执行后面的命令</li>
 </ol>
-<h1 id="—-使用-—"><a href="#—-使用-—" class="headerlink" title="— 使用 —"></a>— 使用 —</h1><p>用docker的话：<br>默认运行地址 <a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088</a><br>默认账号密码：admin</p>
-<p>还是以官方文档为主，比较详细：</p>
-<p><a target="_blank" rel="noopener" href="https://superset.apache.org/docs/using-superset/creating-your-first-dashboard">创建您的第一个仪表板 |超集 — Creating Your First Dashboard | Superset (apache.org)</a></p>
-<p>因为要做项目集成，还找了一些其他的相关项目与教程，链接如下：</p>
-<p>使用 Superset 和 Cube 构建指标仪表板：</p>
-<p><a target="_blank" rel="noopener" href="https://devpress.csdn.net/opensource/62f3986ec6770329307f89bc.html">https://devpress.csdn.net/opensource/62f3986ec6770329307f89bc.html</a></p>
-<p>应用集成 Superset：</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqi/p/intergate-superset.html">教程 —— 如何在自己的应用集成superset - JadePeng - 博客园</a></p>
-<p>一个易于使用的自助式开放式 BI 报告和 BI 仪表板平台：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/TuiQiao/CBoard">https://github.com/TuiQiao/CBoard</a></p>
-<h1 id="—-参考材料-—"><a href="#—-参考材料-—" class="headerlink" title="— 参考材料 —"></a>— 参考材料 —</h1><ul>
-<li>包括上面出现过的所有链接</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> FLASK_APP=superset <span class="comment">#上面应该执行过了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建管理员用户，不输入默认就是[ ]中的内容，密码输入不可见</span></span><br><span class="line">superset fab create-admin <span class="comment"># 输错了CTRL+C中断重新执行该命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载一些样例数据，应该是要开代理连接的</span></span><br><span class="line">superset load_examples</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建默认角色和权限</span></span><br><span class="line">superset init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在端口 8088 上启动 Web 服务器，使用 -p 绑定端口</span></span><br><span class="line">superset run -p 8088 --with-threads --reload --debugger </span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>如果一切正常，打开浏览器，网址栏进入8088端口就能见到界面了，输入之前创建的管理员用户[admin]和密码</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:8088</span><br></pre></td></tr></table></figure>
+
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5ab079b908.png" alt="Superset下载安装与初始化-11.png" width="70%">
+
+<p>成功进入（因为没改代理跳过了superset load_examples一步所以主菜单没显示样例数据）</p>
+<img src="https://vip.helloimg.com/i/2024/08/09/66b5ab07b89c9.png" alt="Superset下载安装与初始化-12.png" width="70%">
+
+<ol start="11">
+<li>到此，<strong>apache-superset:2.1</strong> PyPI 部署完成</li>
+</ol>
+<h1 id="—-参考材料-—"><a href="#—-参考材料-—" class="headerlink" title="— 参考材料 —"></a>— <strong>参考材料 —</strong></h1><ul>
+<li><a target="_blank" rel="noopener" href="https://superset.apache.org/docs/installation/architecture">建筑 |超集 — Architecture | Superset (apache.org)</a></li>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7348289379054387239">57K star！开源BI神器，比收费软件还好用的数据可视化工具 - 掘金</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b02fcea7eb5b">轻量级BI工具Superset的搭建与使用 - 简书</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40228992/article/details/136414159">superset不同版本安装使用采坑总结（持续更新中）_superset3.1.1改动-CSDN博客</a></li>
 </ul>
 
