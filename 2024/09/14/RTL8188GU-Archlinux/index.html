@@ -24,7 +24,7 @@
 
   
 
-  <title>海内天涯，星河熠熠 | Krisnile&#39;s Blog</title>
+  <title>RTL8188GU+Archlinux | Krisnile&#39;s Blog</title>
 
   
 
@@ -48,9 +48,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://vip.helloimg.com/i/2024/08/07/66b38152666af.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://www.helloimg.com/i/2024/09/14/66e5982b8d7dc.jpg)"></div>
   
 
   <!-- navbar -->
@@ -98,129 +98,118 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">海内天涯，星河熠熠</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">RTL8188GU+Archlinux</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Krisnile</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-09-14T14:06:41.000Z" itemprop="datePublished">2024-09-14</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <div class="post-body">
-   <div id="links">
-      <style>
-         .links-content{
-         margin-top:1rem;
-         }
-         .link-navigation::after {
-         content: " ";
-         display: block;
-         clear: both;
-         }
-         .card {
-         width: 45%;
-         font-size: 1rem;
-         padding: 10px 20px;
-         border-radius: 4px;
-         transition-duration: 0.15s;
-         margin-bottom: 1rem;
-         display:flex;
-         }
-         .card:nth-child(odd) {
-         float: left;
-         }
-         .card:nth-child(even) {
-         float: right;
-         }
-         .card:hover {
-         transform: scale(1.1);
-         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
-         }
-         .card a {
-         border:none;
-         }
-         .card .ava {
-         width: 3rem!important;
-         height: 3rem!important;
-         margin:0!important;
-         margin-right: 1em!important;
-         border-radius:4px;
-         }
-         .card .card-header {
-         font-style: italic;
-         overflow: hidden;
-         width: 100%;
-         }
-         .card .card-header a {
-         font-style: normal;
-         color: #2bbc8a;
-         font-weight: bold;
-         text-decoration: none;
-         }
-         .card .card-header a:hover {
-         color: #d480aa;
-         text-decoration: none;
-         }
-         .card .card-header .info {
-         font-style:normal;
-         color:#a3a3a3;
-         font-size:14px;
-         min-width: 0;
-         overflow: hidden;
-         white-space: nowrap;
-         }
-      </style>
-      <div class="links-content">
-         <div class="link-navigation">
-            <div class="card">
-               <img class="ava" src="https://moying688.github.io/img/avatar.jpg" />
-               <div class="card-header">
-                  <div>
-                     <a target="_blank" rel="noopener" href="https://moying688.github.io/">moying688</a>
-                  </div>
-                  <div class="info">一只末影酱的小屋</div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="links-content">
-         <div class="link-navigation">
-            <div class="card">
-               <img class="ava" src="https://files.catbox.moe/hrwma6.gif?t=844dc9fe-0844-4c7a-ad34-f1e99cdd7dbc" />
-               <div class="card-header">
-                  <div>
-                     <a target="_blank" rel="noopener" href="https://blog-ivory-rho.vercel.app/">Areufm</a>
-                  </div>
-                  <div class="info">一个普通的干饭人🍚</div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<div>
+        <h1 id="RTL8188GU-Archlinux"><a href="#RTL8188GU-Archlinux" class="headerlink" title="RTL8188GU+Archlinux"></a>RTL8188GU+Archlinux</h1><p>网卡信息：COMFAST AX3000免驱USB无线网卡</p>
+<p>解决问题：win11使用正常；Archlinux无法正常识别使用网卡，需自行配置驱动</p>
+<p>准备&amp;驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 插入网卡，终端输入，得到网卡芯片信息</span></span><br><span class="line">lsusb</span><br><span class="line"><span class="comment"># 找到输出如下，确定芯片型号为RTL8188GU</span></span><br><span class="line">Bus 003 Device 007: ID 0bda:1a2b Realtek Semiconductor Corp. RTL8188GU 802.11n WLAN Adapter (Driver CDROM Mode</span><br><span class="line"><span class="comment"># 发现模式（Driver CDROM Mode）不对，被识别为cdrom，所以尝试使用usb_modeswitch命令切换模式</span></span><br><span class="line">yay -S usb_modeswitch <span class="comment"># aur可下载</span></span><br><span class="line"><span class="built_in">sudo</span> usb_modeswitch -KW -v 0bda -p 1a2b <span class="comment"># 切换为wifi模式</span></span><br><span class="line"><span class="comment"># 被识别为cdrom，也可以尝试卸载</span></span><br><span class="line">eject /dev/cdrom</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装相应的内核头文件</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S linux-headers</span><br><span class="line"><span class="comment"># 安装base-devel软件包</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S base-devel</span><br><span class="line"><span class="comment"># 安装驱动（对于archlinux，有[aur包](https://aur.archlinux.org/packages/rtl8xxxu-dkms-git#:~:text=I%20recently%20had%20problems%20getting%20my%20RTL8188GU%20wireless)</span></span><br><span class="line">yay -S rtl8xxxu-dkms-git</span><br></pre></td></tr></table></figure>
+
+<p>模块&amp;配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看模块</span></span><br><span class="line">lsmod <span class="comment"># 输出识别到对应usb网卡（无线标准：IEEE802.11ax）</span></span><br><span class="line">Bus 003 Device 006: ID 0bda:c832 Realtek Semiconductor Corp. 802.11ax WLAN Adapter</span><br><span class="line">lspci | grep Network <span class="comment"># 输出识别到原集成网卡（这里是Intel的）</span></span><br><span class="line">0000:00:14.3 Network controller: Intel Corporation Alder Lake-P PCH CNVi WiFi (rev 01)</span><br><span class="line"><span class="comment"># 查看默认网关所在接口，列出路由表</span></span><br><span class="line">ip route <span class="comment"># 输出可得wlo1是默认网关所在接口</span></span><br><span class="line">default via 192.168.1.1 dev wlo1</span><br><span class="line"><span class="comment"># 查看wlo1接口对应的硬件信息</span></span><br><span class="line"><span class="built_in">ls</span> -l /sys/class/net/wlo1/device/driver/module <span class="comment"># 输出有iwlwifi是intel相关的网卡相关的信息，说明用的不是Realtek网卡</span></span><br><span class="line">lrwxrwxrwx 1 root root 0  9月10日 14:59 /sys/class/net/wlo1/device/driver/module -&gt; ../../../../module/iwlwifi</span><br><span class="line"><span class="comment"># 运行下面命令发现无输出，模块未被正确加载</span></span><br><span class="line">lsmod | grep rtl8xxxu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 modules 的配置文件</span></span><br><span class="line">modprobe -c</span><br><span class="line"><span class="comment"># 输出blacklist rtl8xxxu，即被添加到黑名单，需修改</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>加载&amp;检查</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换模式后可能需要重新加载rtl8xxxu驱动来确保设备能够被正确识别</span></span><br><span class="line"><span class="built_in">sudo</span> modprobe -r rtl8xxxu</span><br><span class="line"><span class="built_in">sudo</span> modprobe rtl8xxxu</span><br><span class="line"><span class="comment"># 检查网络连接</span></span><br><span class="line">ifconfig </span><br><span class="line"><span class="comment"># 没有ifconfig</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S net-tools</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ol>
+<li>如果usb wifi 适配器基于 RTL8188GU 或 RTL8192FU 芯片，需要先使用命令 <code>usb_modeswitch</code> 或 <code>eject</code> 将其切换到“Wifi 模式”。</li>
+<li>在安装此软件包之前，请确保您的系统已安装相应的内核头文件和 <code>base-devel</code> 软件包。</li>
+<li>必须手动将安装的驱动程序列入黑名单或删除除内核内 rtl8xxxu 驱动程序之外的任何冲突驱动程序。</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://melonedo.github.io/2024/05/13/RTL8188GU.html">https://melonedo.github.io/2024/05/13/RTL8188GU.html</a></p>
 
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://vip.helloimg.com/i/2024/08/27/66cd2a7ccf591.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/08/26/Superset%E4%BD%BF%E7%94%A8-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Superset使用&amp;二次开发</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+    <div class="disqus-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <p id="disqus_error" class="disqus-error" style="display: none;">如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w</p>
+      <div id="disqus_thread" class="disqus-thread"></div>
+    </div>
+    <script type="text/javascript">
+      (function() {
+        var d = document, s = d.createElement('script'), c = d.querySelector(".disqus-container");
+        if (!c) return;
+        s.src = 'https://Krisnile.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        s.onerror = () => {
+          document.querySelector("#disqus_error").style.display = "block";
+        }
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -257,6 +246,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -302,7 +293,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
