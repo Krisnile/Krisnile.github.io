@@ -24,7 +24,7 @@
 
   
 
-  <title>RTL8188GU+Archlinux | Krisnile&#39;s Blog</title>
+  <title>BIND-install&amp;introduction | Krisnile&#39;s Blog</title>
 
   
 
@@ -50,7 +50,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://www.helloimg.com/i/2024/09/14/66e5982b8d7dc.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://www.helloimg.com/i/2024/09/14/66e5982b78b90.jpg)"></div>
   
 
   <!-- navbar -->
@@ -101,17 +101,12 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">RTL8188GU+Archlinux</h1>
+          <h1 class="title-wrap">BIND-install&amp;introduction</h1>
           <h2 class="title-sub-wrap">
             <strong>Krisnile</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-09-14T14:06:41.000Z" itemprop="datePublished">2024-09-14</time>
+            <time  class="article-date" datetime="2024-11-01T08:41:45.000Z" itemprop="datePublished">2024-11-01</time>
           </h2>
-          
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-11-01T08:49:24.522Z" itemprop="dateUpdated">2024-11-01</time>
-            </h2>
           
           
           <ul class="wrap-list dark">
@@ -143,30 +138,82 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="RTL8188GU-Archlinux"><a href="#RTL8188GU-Archlinux" class="headerlink" title="RTL8188GU+Archlinux"></a>RTL8188GU+Archlinux</h1><p>网卡信息：COMFAST AX3000免驱USB无线网卡</p>
-<p>解决问题：win11使用正常；Archlinux无法正常识别使用网卡，需自行配置驱动</p>
-<p>准备&amp;驱动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 插入网卡，终端输入，得到网卡芯片信息</span></span><br><span class="line">❯ lsusb</span><br><span class="line"><span class="comment"># 找到输出如下，确定芯片型号为RTL8188GU</span></span><br><span class="line">Bus 003 Device 007: ID 0bda:1a2b Realtek Semiconductor Corp. RTL8188GU 802.11n WLAN Adapter (Driver CDROM Mode</span><br><span class="line"><span class="comment"># 发现模式（Driver CDROM Mode）不对，被识别为cdrom，所以尝试使用usb_modeswitch命令切换模式</span></span><br><span class="line">❯ yay -S usb_modeswitch <span class="comment"># aur可下载</span></span><br><span class="line">❯ <span class="built_in">sudo</span> usb_modeswitch -KW -v 0bda -p 1a2b <span class="comment"># 切换为wifi模式</span></span><br><span class="line"><span class="comment"># 被识别为cdrom，也可以尝试卸载</span></span><br><span class="line">❯ eject /dev/cdrom</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装相应的内核头文件</span></span><br><span class="line">❯ <span class="built_in">sudo</span> pacman -S linux-headers</span><br><span class="line"><span class="comment"># 安装base-devel软件包</span></span><br><span class="line">❯ <span class="built_in">sudo</span> pacman -S base-devel</span><br><span class="line"><span class="comment"># 安装驱动（对于archlinux，有[aur包](https://aur.archlinux.org/packages/rtl8xxxu-dkms-git#:~:text=I%20recently%20had%20problems%20getting%20my%20RTL8188GU%20wireless)</span></span><br><span class="line">❯ yay -S rtl8xxxu-dkms-git</span><br></pre></td></tr></table></figure>
+        <h1 id="BIND-install-introduction"><a href="#BIND-install-introduction" class="headerlink" title="BIND-install&amp;introduction"></a>BIND-install&amp;introduction</h1><p>根据操作系统选择包管理工具安装 BIND（Berkeley Internet Name Domain）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 Pacman 包管理器安装 BIND（Arch Linux</span></span><br><span class="line">❯ <span class="built_in">sudo</span> pacman -S <span class="built_in">bind</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 DNF 包管理器安装 BIND（Fedora</span></span><br><span class="line">❯ <span class="built_in">sudo</span> dnf install <span class="built_in">bind</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 APT 包管理器安装 BIND（Debian/Ubuntu</span></span><br><span class="line">❯ <span class="built_in">sudo</span> apt-get install bind9</span><br></pre></td></tr></table></figure>
 
-<p>模块&amp;配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出连接的usb设备</span></span><br><span class="line">❯ lsmod <span class="comment"># 输出识别到对应usb网卡（无线标准：IEEE802.11ax）</span></span><br><span class="line">Bus 003 Device 006: ID 0bda:c832 Realtek Semiconductor Corp. 802.11ax WLAN Adapter</span><br><span class="line">❯ lspci | grep Network <span class="comment"># 输出识别到原集成网卡（这里是Intel的）</span></span><br><span class="line">0000:00:14.3 Network controller: Intel Corporation Alder Lake-P PCH CNVi WiFi (rev 01)</span><br><span class="line"><span class="comment"># 查看默认网关所在接口，列出路由表</span></span><br><span class="line">❯ ip route <span class="comment"># 输出可得wlo1是默认网关所在接口</span></span><br><span class="line">❯ default via 192.168.1.1 dev wlo1</span><br><span class="line"><span class="comment"># 查看wlo1接口对应的硬件信息</span></span><br><span class="line">❯ <span class="built_in">ls</span> -l /sys/class/net/wlo1/device/driver/module <span class="comment"># 输出有iwlwifi是intel相关的网卡相关的信息，说明用的不是Realtek网卡</span></span><br><span class="line">❯ lrwxrwxrwx 1 root root 0  9月10日 14:59 /sys/class/net/wlo1/device/driver/module -&gt; ../../../../module/iwlwifi</span><br><span class="line"><span class="comment"># 运行下面命令发现无输出，模块未被正确加载</span></span><br><span class="line">❯ lsmod | grep rtl8xxxu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看内核模块配置文件</span></span><br><span class="line">❯ <span class="built_in">ls</span> /etc/modprobe.d</span><br><span class="line"><span class="comment"># 输出有 blacklist-rtl8xxxu.conf 与 rtl8xxxu_git.conf 两个文件</span></span><br><span class="line">❯ <span class="built_in">cat</span> /etc/modprobe.d/blacklist-rtl8xxxu.conf</span><br><span class="line">blacklist rtl8xxxu</span><br><span class="line"><span class="comment"># 输出blacklist rtl8xxxu，即被添加到黑名单，需修改</span></span><br><span class="line"><span class="comment"># 需要将文件代码注释掉或者删掉</span></span><br><span class="line">❯ <span class="built_in">cat</span> /etc/modprobe.d/rtl8xxxu_git.conf <span class="comment"># 内核加载参数不用修改</span></span><br><span class="line">options rtl8xxxu_git ht40_2g=1 <span class="comment"># ht40_2g=1参数启用了2.4GHz频段下的HT40模式</span></span><br><span class="line"><span class="comment"># 将原来的intel网卡添加到黑名单防止冲突</span></span><br><span class="line">❯ <span class="built_in">sudo</span> sh -c <span class="string">&#x27;echo &quot;blacklist iwlwifi&quot; &gt; /etc/modprobe.d/blacklist-iwlwifi.conf&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 版本</span><br><span class="line">❯ named -v</span><br><span class="line">BIND 9.20.3 (Stable Release) &lt;<span class="built_in">id</span>:1e2850e&gt;</span><br></pre></td></tr></table></figure>
 
-<p>加载&amp;检查</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换模式后可能需要重新加载rtl8xxxu驱动来确保设备能够被正确识别</span></span><br><span class="line"><span class="comment"># 实在不行也可以重启电脑再运行加载</span></span><br><span class="line">❯ <span class="built_in">sudo</span> modprobe -r rtl8xxxu</span><br><span class="line">❯ <span class="built_in">sudo</span> modprobe rtl8xxxu</span><br><span class="line"><span class="comment"># 再次运行检测模块是否被加载</span></span><br><span class="line">❯ lsmod | grep rtl8xxxu</span><br><span class="line">rtl8xxxu              339968  0</span><br><span class="line">mac80211             1708032  1 rtl8xxxu</span><br><span class="line">cfg80211             1409024  2 mac80211,rtl8xxxu</span><br><span class="line"><span class="comment"># 输出来看 rtl8xxxu 模块已经被加载，并且依赖于 mac80211 和 cfg80211 模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查网络连接</span></span><br><span class="line">ifconfig </span><br><span class="line"><span class="comment"># 没有ifconfig</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S net-tools</span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<ol>
-<li>如果usb wifi 适配器基于 RTL8188GU 或 RTL8192FU 芯片，需要先使用命令 <code>usb_modeswitch</code> 或 <code>eject</code> 将其切换到“Wifi 模式”。</li>
-<li>在安装此软件包之前，请确保您的系统已安装相应的内核头文件和 <code>base-devel</code> 软件包。</li>
-<li>必须手动将安装的驱动程序列入黑名单或删除除内核内 rtl8xxxu 驱动程序之外的任何冲突驱动程序。</li>
+<h2 id="本地主机-DNS-服务器"><a href="#本地主机-DNS-服务器" class="headerlink" title="本地主机 DNS 服务器"></a>本地主机 DNS 服务器</h2><ol>
+<li><code>/etc/named.conf</code> 文件是的主要配置文件，用于定义 DNS 服务器的行为和配置</li>
 </ol>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://melonedo.github.io/2024/05/13/RTL8188GU.html">https://melonedo.github.io/2024/05/13/RTL8188GU.html</a></p>
+<p>下面是<code>/etc/named.conf</code>默认的内容</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vim:set ts=4 sw=4 et:</span></span><br><span class="line"></span><br><span class="line">options &#123;</span><br><span class="line">    directory <span class="string">&quot;/var/named&quot;</span>;</span><br><span class="line">    pid-file <span class="string">&quot;/run/named/named.pid&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Uncomment these to enable IPv6 connections support</span></span><br><span class="line">    <span class="comment">// IPv4 will still work:</span></span><br><span class="line">    <span class="comment">//  listen-on-v6 &#123; any; &#125;;</span></span><br><span class="line">    <span class="comment">// Add this for no IPv4:</span></span><br><span class="line">    <span class="comment">//  listen-on &#123; none; &#125;;</span></span><br><span class="line"></span><br><span class="line">    allow-recursion &#123; <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>; &#125;;</span><br><span class="line">    allow-transfer &#123; none; &#125;;</span><br><span class="line">    allow-update &#123; none; &#125;;</span><br><span class="line"></span><br><span class="line">    version none;</span><br><span class="line">    hostname none;</span><br><span class="line">    server-id none;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">zone <span class="string">&quot;localhost&quot;</span> <span class="variable constant_">IN</span> &#123;</span><br><span class="line">    type master;</span><br><span class="line">    file <span class="string">&quot;localhost.zone&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">zone <span class="string">&quot;0.0.127.in-addr.arpa&quot;</span> <span class="variable constant_">IN</span> &#123;</span><br><span class="line">    type master;</span><br><span class="line">    file <span class="string">&quot;127.0.0.zone&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">zone <span class="string">&quot;1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa&quot;</span> &#123;</span><br><span class="line">    type master;</span><br><span class="line">    file <span class="string">&quot;localhost.ip6.zone&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//zone &quot;example.org&quot; IN &#123;</span></span><br><span class="line"><span class="comment">//    type slave;</span></span><br><span class="line"><span class="comment">//    file &quot;example.zone&quot;;</span></span><br><span class="line"><span class="comment">//    masters &#123;</span></span><br><span class="line"><span class="comment">//        192.168.1.100;</span></span><br><span class="line"><span class="comment">//    &#125;;</span></span><br><span class="line"><span class="comment">//    allow-query &#123; any; &#125;;</span></span><br><span class="line"><span class="comment">//    allow-transfer &#123; any; &#125;;</span></span><br><span class="line"><span class="comment">//&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//logging &#123;</span></span><br><span class="line"><span class="comment">//    channel xfer-log &#123;</span></span><br><span class="line"><span class="comment">//        file &quot;/var/log/named.log&quot;;</span></span><br><span class="line"><span class="comment">//            print-category yes;</span></span><br><span class="line"><span class="comment">//            print-severity yes;</span></span><br><span class="line"><span class="comment">//            severity info;</span></span><br><span class="line"><span class="comment">//        &#125;;</span></span><br><span class="line"><span class="comment">//        category xfer-in &#123; xfer-log; &#125;;</span></span><br><span class="line"><span class="comment">//        category xfer-out &#123; xfer-log; &#125;;</span></span><br><span class="line"><span class="comment">//        category notify &#123; xfer-log; &#125;;</span></span><br><span class="line"><span class="comment">//&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>/var/named</code> 目录是 BIND（Berkeley Internet Name Domain）服务器的默认工作目录，用于存储 DNS 区域文件和其他相关文件</li>
+</ol>
+<p>列出 <code>/var/named</code> 目录，目录默认包含了以下几个文件：</p>
+<ul>
+<li><code>127.0.0.zone</code>：用于 <code>127.0.0.0/8</code> 网段的反向解析区域文件。</li>
+<li><code>localhost.ip6.zone</code>：用于 <code>::1</code>（IPv6 本地回环地址）的反向解析区域文件。</li>
+<li><code>localhost.zone</code>：用于 <code>localhost</code> 的正向解析区域文件。</li>
+<li><code>managed-keys.bind</code>：用于 DNSSEC 的密钥管理文件。</li>
+<li><code>managed-keys.bind.jnl</code>：<code>managed-keys.bind</code> 的日志文件。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> sh -c <span class="string">&#x27;cd /var/named &amp;&amp; ls&#x27;</span></span><br><span class="line">127.0.0.zone        managed-keys.bind</span><br><span class="line">localhost.ip6.zone  managed-keys.bind.jnl</span><br><span class="line">localhost.zone</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>/etc/resolv.conf</code> 文件是用于配置系统 DNS 解析器的配置文件，告诉系统哪些 DNS 服务器应该用于解析域名，该文件一般由网络管理工具（如 NetworkManager 或 systemd-resolved）自动生成</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> <span class="built_in">cat</span> /etc/resolv.conf</span><br><span class="line"><span class="comment"># Generated by NetworkManager</span></span><br><span class="line">nameserver 192.168.1.1</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>/etc/resolv.conf</code> 文件中，<code>nameserver</code> 指令用于指定 DNS 服务器的 IP 地址。每个 <code>nameserver</code> 行可以指定一个 DNS 服务器的 IP 地址，系统会按照这些地址的顺序进行 DNS 查询</p>
+<p>上面输出192.168.1.1表示你本地的一个DNS 服务器</p>
+<p>你可以使用先前bind默认配置的文件，直接编辑<code>nameserver</code>行即可，保存更改并退出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameserver 127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>需要注意：如果系统重启或网络重启，那么 NetworkManager 等网络管理工具会覆盖 <code>/etc/resolv.conf</code> 文件</p>
+<p>可以将 <code>/etc/resolv.conf</code> 设为不可变（只读）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> chattr +i /etc/resolv.conf</span><br></pre></td></tr></table></figure>
+
+<p>如果要允许可以被覆盖，使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> chattr -i /etc/resolv.conf</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>测试</strong> DNS 服务器</li>
+</ol>
+<p>使用nslookup命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">❯ nslookup bilibili.com</span><br><span class="line">Server:         127.0.0.1</span><br><span class="line">Address:        127.0.0.1#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:   bilibili.com</span><br><span class="line">Address: 8.134.50.24</span><br><span class="line">Name:   bilibili.com</span><br><span class="line">Address: 139.159.241.37</span><br><span class="line">Name:   bilibili.com</span><br><span class="line">Address: 119.3.70.188</span><br><span class="line">Name:   bilibili.com</span><br><span class="line">Address: 47.103.24.173</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用dig命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">❯ dig bilibili.com</span><br><span class="line">// 输出太多不粘贴了</span><br></pre></td></tr></table></figure>
+
+<p>使用wireshark检测到流量</p>
+<img src="https://www.helloimg.com/i/2024/11/01/6724945cc6aa7.png" alt="BIND-install&introduction-1.png" width="70%">
+
+<ol>
+<li>其他</li>
+</ol>
+<p><strong>启用、启动</strong>与查询DNS服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> named</span><br><span class="line">❯ <span class="built_in">sudo</span> systemctl start named</span><br><span class="line">❯ <span class="built_in">sudo</span> systemctl status named</span><br></pre></td></tr></table></figure>
+
+<p>不使用默认的配置文件，配置自定义的文件，你可能会用到：</p>
+<p><strong>检查配置是否存在语法错误（无输出为有效）</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> named-checkconf /etc/named.conf</span><br></pre></td></tr></table></figure>
+
+<p>检查转发和反向区域文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> named-checkzone forward.agent /var/named/forward.agent.local</span><br><span class="line">❯ <span class="built_in">sudo</span> named-checkzone reverse.agent /var/named/forward.agent.local</span><br></pre></td></tr></table></figure>
+
+<p>P.S.</p>
+<p>forward.agent 与 reverse.agent 是在&#x2F;etc&#x2F;named.conf中自定义的，名称随意</p>
+<p>forward.agent.local 与 reverse.agent.local 是你在 &#x2F;var&#x2F;named&#x2F; 中定义的文件</p>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -177,23 +224,6 @@
       
         <a href="/2024/10/23/Raindrop-io%E4%B9%A6%E7%AD%BE%E7%AE%A1%E7%90%86/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">Raindrop.io书签管理</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://www.helloimg.com/i/2024/10/30/67218aa5ee7b9.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2024/08/26/Superset%E4%BD%BF%E7%94%A8-%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Superset使用&amp;二次开发</h2>
         </a>
       
       <div class="card-text--row">Older</div>
