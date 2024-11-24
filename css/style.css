@@ -687,6 +687,16 @@ html.show-mobile-nav .navbar-list {
     padding: 8px;
   }
 }
+.post-copyright {
+  margin: 2em 0 1em;
+  padding: 0.5em 1em;
+  border-left: 3px solid #822850;
+  background-color: #f9f9f9;
+  list-style: none;
+}
+.post-copyright li {
+  line-height: 30px;
+}
 .card-container {
   position: relative;
   height: 100%;
